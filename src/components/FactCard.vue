@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <div class="card shadow-sm mb-3" style="width: 100%;">
+  <div class="card shadow-sm mb-3" style="width: 100%; height: 300px;">
     <div class="card-body">
       <p class="text-muted mb-2">
         A cool <strong>{{ title }}</strong> Fact
@@ -17,7 +17,13 @@
         {{ fact }}
       </p>
       <div class="">
-        <button class="btn btn-link text-danger fs-4 p-0" @click="emit('fetchFact', title)">&#x2B07;</button>
+        <button
+          class="btn position-absolute top-0 end-0 m-3 p-0 border-0"
+          style="color: red; font-size: 1.5rem;"
+          @click="emit('fetchFact', title)"
+        >
+          <i class="bi bi-arrow-down-circle-fill"></i>
+        </button>
       </div>
     </div>
   </div>

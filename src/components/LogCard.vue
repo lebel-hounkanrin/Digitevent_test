@@ -10,8 +10,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-white border rounded p-3" style="min-height: 300px;">
-    <h6><u>Logs</u></h6>
+  <div class="bg-white border rounded p-3" style="min-height: 630px;">
+    <h6><u class="font-bold">Logs</u></h6>
     <div v-for="log in logs" :key="log.time" class="mt-3">
       <div class="fw-bold">{{ log.time }}</div>
       <div><strong>{{ log.category }} Fact</strong></div>

@@ -36,7 +36,7 @@ const LogList = ref<{category: string, fact: string, time: string;}[]>([])
 </script>
 
 <template>
-  <div class="container">
+  <div class="container bg-white rounded-lg shadow-md p-4 w-80">
     <div class="row">
       <div class="col-md-6 d-flex flex-column align-items-start gap-3">
         <FactCard title="Math" :fact="currentMathFunFact" @fetch-fact="fetcFact"/>
