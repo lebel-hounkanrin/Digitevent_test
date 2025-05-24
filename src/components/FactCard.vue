@@ -1,18 +1,25 @@
 <script setup lang="ts">
   interface FactCardProps {
     title: string,
-    description: string
+    fact: string
   }
   defineProps<FactCardProps>();
 </script>
 
 <template>
-<div class="card">
-  <div class="card-body">
-    <p>A cool {{title}} Fact</p>
-    <p>{{description}}</p>
+  <div class="card shadow-sm mb-3" style="width: 20rem;">
+    <div class="card-body">
+      <p class="text-muted mb-2">
+        A cool <strong>{{ title }}</strong> Fact
+      </p>
+      <p class="card-text fw-bold">
+        {{ fact }}
+      </p>
+      <div class="">
+        <button class="btn btn-link text-danger fs-4 p-0">&#x2B07;</button>
+      </div>
+    </div>
   </div>
-</div>
 </template>
 
 <style scoped>

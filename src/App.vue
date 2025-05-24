@@ -1,9 +1,17 @@
 <script setup lang="ts">
 
+import FactCard from '@/components/FactCard.vue'
 </script>
 
 <template>
-<h1>hello devs</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <FactCard title="Math" fact="some math fun fact" />
+        <FactCard title="Date" fact="some date fun fact" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
