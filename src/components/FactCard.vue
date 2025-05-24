@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <div class="card shadow-sm mb-3" style="width: 20rem;">
+  <div class="card shadow-sm mb-3" style="width: 100%;">
     <div class="card-body">
       <p class="text-muted mb-2">
         A cool <strong>{{ title }}</strong> Fact
