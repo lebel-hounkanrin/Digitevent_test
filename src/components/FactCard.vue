@@ -4,6 +4,7 @@
     fact: string
   }
   defineProps<FactCardProps>();
+  const emit = defineEmits(['fetchFact']);
 </script>
 
 <template>
@@ -16,7 +17,7 @@
         {{ fact }}
       </p>
       <div class="">
-        <button class="btn btn-link text-danger fs-4 p-0">&#x2B07;</button>
+        <button class="btn btn-link text-danger fs-4 p-0" @click="emit('fetchFact', title)">&#x2B07;</button>
       </div>
     </div>
   </div>
