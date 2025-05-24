@@ -3,6 +3,7 @@
 import FactCard from '@/components/FactCard.vue'
 import LogCard from '@/components/LogCard.vue'
 import { ref } from 'vue'
+import { formatDate } from '@/components/utils.ts'
 
 const currentMathFunFact = ref("");
 const currentDateFact = ref("");
@@ -14,24 +15,24 @@ const fetcFact = async (title: "Math" | "Date")  => {
       const response = await fetch(`http://numbersapi.com/${randomIndex}/math`);
       const text = await response.text();
       currentMathFunFact.value = text;
-      fact = currentMathFunFact.value;
+      fact = text;
     } else {
       const randomMonth = Math.floor(Math.random() * 12) + 1;
       const randomYear = Math.floor(Math.random() * 12) + 1;
       const response = await fetch(`http://numbersapi.com/${randomMonth}/${randomYear}/date`);
       const text = await response.text();
       currentDateFact.value = text;
-      fact = currentMathFunFact.value;
+      fact = text;
     }
     LogList.value.push(
-      {category: title, fact: fact, time: new Date().toISOString()}
+      {category: title, fact: fact, time: formatDate(new Date())}
     );
   }
   catch (error) {
     console.error(error);
   }
 }
-const LogList = ref<{category: string, fact: string, time: string;}>([])
+const LogList = ref<{category: string, fact: string, time: string;}[]>([])
 </script>
 
 <template>
